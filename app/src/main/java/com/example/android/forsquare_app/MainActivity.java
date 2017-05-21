@@ -7,8 +7,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
-import android.view.Window;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -17,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
     public Fragment selectedFragment;
 
+    public void showMessage(View view){
+        Log.v("searchFrag","clicked!");
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

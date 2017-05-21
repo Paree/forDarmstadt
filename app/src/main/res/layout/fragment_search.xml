@@ -6,107 +6,138 @@
     android:orientation="vertical"
     tools:context="com.example.android.forsquare_app.searchFrag">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="0.5">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
             android:src="@drawable/brooke_lark_96398"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:id="@+id/backgroundTop"/>
-</LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@+id/backgroundTop"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        >
+
+
         <SearchView
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.1"/>
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_weight="0.1"
+            android:layout_below="@+id/backgroundTop"
+            />
 
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.5"
+    >
+    <TableRow
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="0.5">
-            <Button
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:layout_column="0"
+            android:onClick="showMessage"
+
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cafe"
+                android:id="@+id/cafe"
+                />
+            <TextView
+                android:background="@android:color/transparent"
                 android:id="@+id/search_breakfast"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="searchBreakfast"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
                 android:text="Breakfast"
                 android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:layout_below="@+id/cafe"
+/>
 
-            <Button
-                android:id="@+id/search_lunch"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="searchLunch"
-                android:text="Lunch"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                />
+        </RelativeLayout>
 
-            <Button
-                android:id="@+id/search_dinner"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="searchDinner"
-                android:text="Dinner"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                />
 
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/search_lunch"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:onClick="searchLunch"
+            android:text="Lunch"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:src="@drawable/cafe"
+            android:background="@android:color/transparent"
+            android:layout_column="1"
+            android:layout_weight="0.33"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="0.5">
-            <Button
-                android:id="@+id/search_coffeeAndTea"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="searchCoffeeAndTea"
-                android:text="Coffee and Tea"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                />
+            />
 
-            <Button
-                android:id="@+id/search_nightlife"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="searchNightlife"
-                android:text="Nightlife"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                />
+        <Button
+            android:id="@+id/search_dinner"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:onClick="searchDinner"
+            android:text="Dinner"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_weight="0.33"
+            android:layout_column="2"
+            />
+    </TableRow>
+    <TableRow
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/search_coffeeAndTea"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:onClick="searchCoffeeAndTea"
+            android:text="Coffee and Tea"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_weight="0.33"
+            android:background="@android:color/transparent"
 
-            <Button
-                android:id="@+id/search_thingsToDo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="searchThingsToDo"
-                android:text="Things to do"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                />
-        </LinearLayout>
+            />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/search_nightlife"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:onClick="searchNightlife"
+            android:text="Nightlife"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_weight="0.33"
+            />
+
+        <Button
+            android:id="@+id/search_thingsToDo"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:onClick="searchThingsToDo"
+            android:text="Things to do"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_weight="0.33"
+            />
+
+    </TableRow>
+
+</TableLayout>
+
+
 
 
 </LinearLayout>
