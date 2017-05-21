@@ -23,14 +23,14 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_gravity="start"
         android:background="?android:attr/windowBackground"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation"
-        app:showAsAction="always"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@color/colorPrimaryDark"
-        app:itemTextColor="@color/white"
+
+        app:itemBackground="@color/colorPrimaryLight"
+    app:itemIconTint="@color/colorIcon"
+    app:itemTextColor="@color/colorText"
         />
 
 </RelativeLayout>
