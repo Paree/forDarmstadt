@@ -3,7 +3,6 @@ package com.example.android.forsquare_app;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +20,9 @@ public class searchFrag extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public searchFrag() {
-        // Required empty public constructor
+
+    public void searchFrag() {
+
     }
 
     /**
@@ -42,14 +42,15 @@ public class searchFrag extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-    private static final String TAG = "MyActivity";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Log.v(TAG,"onfragmentcrate");
+
+
         View searchView =  inflater.inflate(R.layout.fragment_search, container, false);
-        Log.v(TAG,"AFTER");
+
 
 
         return searchView;
