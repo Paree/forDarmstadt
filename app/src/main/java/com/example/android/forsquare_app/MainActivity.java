@@ -58,12 +58,14 @@ public class MainActivity extends AppCompatActivity {
                                 if(!(selectedFragment instanceof historyFrag)) {
                                     selectedFragment = historyFrag.newInstance();
                                     actionBar.show();
+                                    actionBar.setTitle(R.string.title_history);
                                 }
                                 break;
                             case R.id.navigation_lists:
                                 if(!(selectedFragment instanceof listsFrag)) {
                                     selectedFragment = listsFrag.newInstance();
                                     actionBar.show();
+                                    actionBar.setTitle(R.string.title_lists);
                                 }
 
                                 break;
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                                 if(!(selectedFragment instanceof listsFrag)) {
                                     selectedFragment = meFrag.newInstance();
                                     actionBar.show();
+                                    actionBar.setTitle(R.string.title_me);
                                 }
                                 break;
                         }
