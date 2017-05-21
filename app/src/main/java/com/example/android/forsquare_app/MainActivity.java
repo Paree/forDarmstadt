@@ -13,8 +13,9 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    final ActionBar actionBar = getSupportActionBar();
+
     private TextView mTextMessage;
+    public Fragment selectedFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,33 +29,43 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
 
+        final ActionBar actionBar = getSupportActionBar();
+        selectedFragment = null;
         actionBar.hide();
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        Fragment selectedFragment = null;
+
 
                         switch (item.getItemId()) {
                             case R.id.navigation_search:
-                                actionBar.hide();
 
-                                selectedFragment = searchFrag.newInstance();
+                                if(!(selectedFragment instanceof searchFrag)){
+                                    selectedFragment = searchFrag.newInstance();
+                                    actionBar.hide();
+                                }
                                ;
                                 break;
                             case R.id.navigation_history:
-                                selectedFragment = historyFrag.newInstance();
-                                actionBar.show();
 
+                                if(!(selectedFragment instanceof historyFrag)) {
+                                    selectedFragment = historyFrag.newInstance();
+                                    actionBar.show();
+                                }
                                 break;
                             case R.id.navigation_lists:
-                                selectedFragment = listsFrag.newInstance();
-                                actionBar.show();
+                                if(!(selectedFragment instanceof listsFrag)) {
+                                    selectedFragment = listsFrag.newInstance();
+                                    actionBar.show();
+                                }
 
                                 break;
                             case R.id.navigation_me:
-                                selectedFragment = meFrag.newInstance();
-                                actionBar.show();
+                                if(!(selectedFragment instanceof listsFrag)) {
+                                    selectedFragment = meFrag.newInstance();
+                                    actionBar.show();
+                                }
                                 break;
                         }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
