@@ -8,12 +8,12 @@
     <ImageView
         android:id="@+id/backgroundTop"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/brooke_lark_96398"
+        android:layout_height="150dp"
         android:layout_above="@+id/relativeLayout"
+        android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"/>
+        android:background="@drawable/brooke_lark_96398"
+        android:scaleType="fitXY" />
 
 
     <RelativeLayout
